@@ -1,0 +1,38 @@
+{
+  "name": "cse-341-project1",
+  "version": "1.0.0",
+  "description": "My first project",
+  "homepage": "https://github.com/Pappafabian17/cse-341-project1#readme",
+  "bugs": {
+    "url": "https://github.com/Pappafabian17/cse-341-project1/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pappafabian17/cse-341-project1.git"
+  },
+  "license": "ISC",
+  "author": "Fabian Pappa",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongodb": "^7.4.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^10.6.0",
+    "eslint-config-prettier": "^10.0.1",
+    "globals": "^17.7.0",
+    "prettier": "^3.5.0"
+  }
+}
