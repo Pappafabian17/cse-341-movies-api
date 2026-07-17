@@ -1,11 +1,11 @@
 const {body, param, validationResult} = require('express-validator');
 
-const {objectId} = require('mongodb');
+const {ObjectId} = require('mongodb');
 
 
 const validateResults = (req, res, next) => {
-  const error = validateResults(req);
-  if(!error.isEmpty()){
+  const errors = validationResult(req);
+  if(!errors.isEmpty()){
     return res.status(400).json({
       success: false,
       errors: errors.array()
@@ -16,7 +16,7 @@ const validateResults = (req, res, next) => {
 
 const validateId = [
   param('id').custom((value)=>{
-    if(!objectId.isValid(value)){
+    if(!ObjectId.isValid(value)){
       throw new Error('Invalid ObjectId format');
     };
     return true;

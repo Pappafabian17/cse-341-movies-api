@@ -7,6 +7,25 @@ const doc = {
   },
   host: 'localhost:3000',
   schemes: ['http', 'https'],
+  definitions: {
+    Movie: {
+      title: 'Inception',
+      director: 'Christopher Nolan',
+      releaseYear: 2010,
+      genre: 'Sci-Fi',
+      rating: 'PG-13',
+      duration: 148,
+      language: 'English',
+      plot: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.'
+    },
+    Director: {
+      name: 'Christopher Nolan',
+      birthYear: 1970,
+      nationality: 'British-American',
+      notableWorks: ['Inception', 'Interstellar', 'The Dark Knight'],
+      active: true
+    }
+  }
 };
 
 const outputFile = './swagger.json';

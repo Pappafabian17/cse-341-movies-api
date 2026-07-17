@@ -29,6 +29,12 @@ const getSingle = handleAsync(async (req, res) => {
 
 const createDirector = handleAsync(async (req, res) => {
   //#swagger.tags = ['Directors']
+  /*  #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Add a new director to the database',
+        required: true,
+        schema: { $ref: '#/definitions/Director' }
+  } */
   const director = {
     name: req.body.name,
     birthYear: parseInt(req.body.birthYear),
@@ -47,6 +53,12 @@ const createDirector = handleAsync(async (req, res) => {
 
 const updateDirector = handleAsync(async (req, res) => {
   //#swagger.tags = ['Directors']
+  /*  #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Update director information',
+        required: true,
+        schema: { $ref: '#/definitions/Director' }
+  } */
   const directorId = new ObjectId(req.params.id);
   const director = {
     name: req.body.name,

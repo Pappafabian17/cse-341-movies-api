@@ -28,6 +28,12 @@ const getSingle = handleAsync(async (req, res) => {
 
 const createMovie = handleAsync(async (req, res) => {
   //#swagger.tags = ['Movies']
+  /*  #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Add a new movie to the database',
+        required: true,
+        schema: { $ref: '#/definitions/Movie' }
+  } */
   const movie = {
     title: req.body.title,
     director: req.body.director,
@@ -49,6 +55,12 @@ const createMovie = handleAsync(async (req, res) => {
 
 const updateMovie = handleAsync(async (req, res) => {
   //#swagger.tags = ['Movies']
+  /*  #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Update movie information',
+        required: true,
+        schema: { $ref: '#/definitions/Movie' }
+  } */
   const movieId = new ObjectId(req.params.id);
   const movie = {
     title: req.body.title,
