@@ -5,8 +5,6 @@ const doc = {
     title: 'Movies and Directors API',
     description: 'An API designed to perform CRUD operations on movies and directors database.',
   },
-  host: 'localhost:3000',
-  schemes: ['http', 'https'],
   definitions: {
     Movie: {
       title: 'Inception',
