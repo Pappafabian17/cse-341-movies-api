@@ -5,11 +5,9 @@
     "description": "An API designed to perform CRUD operations on movies and directors database.",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "",
   "basePath": "/",
-  "schemes": [
-    "http"
-  ],
+  "schemes": [],
   "paths": {
     "/": {
       "get": {
