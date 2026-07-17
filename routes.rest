@@ -1,33 +1,87 @@
-// LOCALHOST
-### Get all contacts
-GET http://localhost:3000/contacts
+### =========================================================================
+### LOCALHOST (Local Requests)
+### =========================================================================
 
-### Get contact by id
-GET http://localhost:3000/contacts/6a498fa697484bb30cdf3073
+### Welcome to the API
+GET http://localhost:3000/
 
-### Create contact
-POST http://localhost:3000/contacts HTTP/1.1
+### -------------------------------------------------------------------------
+### MOVIES
+### -------------------------------------------------------------------------
+
+### 1. Get all movies
+GET http://localhost:3000/movies
+
+### 2. Get a single movie by ID (Replace with an existing ID from your DB)
+GET http://localhost:3000/movies/64a98fa697484bb30cdf3073
+
+### 3. Create a new movie
+POST http://localhost:3000/movies HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "fabiancito",
-    "lastName": "Morenito",
-    "email": "fabiancitomorenito@gmail.com",
-    "favoriteColor": "lightblue",
-    "birthday": "1994-12-26"
+  "title": "Inception",
+  "director": "Christopher Nolan",
+  "releaseYear": 2010,
+  "genre": "Sci-Fi",
+  "rating": "PG-13",
+  "duration": 148,
+  "language": "English",
+  "plot": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O."
 }
 
-### PUT contact (Update)
-PUT http://localhost:3000/contacts/6a498ffe97484bb30cdf3074 HTTP/1.1
+### 4. Update a movie (Replace the ID at the end with an existing one)
+PUT http://localhost:3000/movies/64a98fa697484bb30cdf3073 HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "fabiancito",
-    "lastName": "pappa",
-    "email": "fabiancito@gmail.com",
-    "favoriteColor": "blue-sape",
-    "birthday": "2000-05-29"
+  "title": "Inception (Special Edition)",
+  "director": "Christopher Nolan",
+  "releaseYear": 2010,
+  "genre": "Sci-Fi / Thriller",
+  "rating": "PG-13",
+  "duration": 150,
+  "language": "English",
+  "plot": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O."
 }
 
-### DELETE contact
-DELETE http://localhost:3000/contacts/6a4b0cae03aed70d0ef02701 HTTP/1.1
+### 5. Delete a movie (Replace the ID at the end with an existing one)
+DELETE http://localhost:3000/movies/64a98fa697484bb30cdf3073 HTTP/1.1
+
+
+### -------------------------------------------------------------------------
+### DIRECTORS
+### -------------------------------------------------------------------------
+
+### 1. Get all directors
+GET http://localhost:3000/directors
+
+### 2. Get a single director by ID (Replace with an existing ID from your DB)
+GET http://localhost:3000/directors/64a98fa697484bb30cdf3074
+
+### 3. Create a new director
+POST http://localhost:3000/directors HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Christopher Nolan",
+  "birthYear": 1970,
+  "nationality": "British-American",
+  "notableWorks": ["Inception", "Interstellar", "The Dark Knight"],
+  "active": true
+}
+
+### 4. Update a director (Replace the ID at the end with an existing one)
+PUT http://localhost:3000/directors/64a98fa697484bb30cdf3074 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Christopher Nolan",
+  "birthYear": 1970,
+  "nationality": "British-American",
+  "notableWorks": ["Inception", "Interstellar", "The Dark Knight", "Oppenheimer"],
+  "active": true
+}
+
+### 5. Delete a director (Replace the ID at the end with an existing one)
+DELETE http://localhost:3000/directors/64a98fa697484bb30cdf3074 HTTP/1.1

@@ -1,21 +1,19 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Contacts Api",
-    "description": "Contacts API",
+    "title": "Movies and Directors API",
+    "description": "An API designed to perform CRUD operations on movies and directors database.",
     "version": "1.0.0"
   },
-  "host": "cse-341-project1-vouo.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
+    "http",
     "https"
   ],
   "paths": {
     "/": {
       "get": {
-        "tags": [
-          "Hello world"
-        ],
         "description": "",
         "responses": {
           "200": {
@@ -34,10 +32,10 @@
         }
       }
     },
-    "/contacts/": {
+    "/movies/": {
       "get": {
         "tags": [
-          "Contacts"
+          "Movies"
         ],
         "description": "",
         "produces": [
@@ -51,7 +49,7 @@
       },
       "post": {
         "tags": [
-          "Contacts"
+          "Movies"
         ],
         "description": "",
         "parameters": [
@@ -61,19 +59,28 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "title": {
                   "example": "any"
                 },
-                "lastName": {
+                "director": {
                   "example": "any"
                 },
-                "email": {
+                "releaseYear": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "genre": {
                   "example": "any"
                 },
-                "birthday": {
+                "rating": {
+                  "example": "any"
+                },
+                "duration": {
+                  "example": "any"
+                },
+                "language": {
+                  "example": "any"
+                },
+                "plot": {
                   "example": "any"
                 }
               }
@@ -81,19 +88,16 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "201": {
+            "description": "Created"
           }
         }
       }
     },
-    "/contacts/{id}": {
+    "/movies/{id}": {
       "get": {
         "tags": [
-          "Contacts"
+          "Movies"
         ],
         "description": "",
         "produces": [
@@ -115,7 +119,7 @@
       },
       "put": {
         "tags": [
-          "Contacts"
+          "Movies"
         ],
         "description": "",
         "parameters": [
@@ -131,19 +135,28 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "title": {
                   "example": "any"
                 },
-                "lastName": {
+                "director": {
                   "example": "any"
                 },
-                "email": {
+                "releaseYear": {
                   "example": "any"
                 },
-                "favoriteColor": {
+                "genre": {
                   "example": "any"
                 },
-                "birthday": {
+                "rating": {
+                  "example": "any"
+                },
+                "duration": {
+                  "example": "any"
+                },
+                "language": {
+                  "example": "any"
+                },
+                "plot": {
                   "example": "any"
                 }
               }
@@ -153,15 +166,12 @@
         "responses": {
           "204": {
             "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       },
       "delete": {
         "tags": [
-          "Contacts"
+          "Movies"
         ],
         "description": "",
         "parameters": [
@@ -175,9 +185,145 @@
         "responses": {
           "204": {
             "description": "No Content"
+          }
+        }
+      }
+    },
+    "/directors/": {
+      "get": {
+        "tags": [
+          "Directors"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Directors"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "birthYear": {
+                  "example": "any"
+                },
+                "nationality": {
+                  "example": "any"
+                },
+                "notableWorks": {
+                  "example": "any"
+                },
+                "active": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/directors/{id}": {
+      "get": {
+        "tags": [
+          "Directors"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Directors"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
           },
-          "500": {
-            "description": "Internal Server Error"
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "birthYear": {
+                  "example": "any"
+                },
+                "nationality": {
+                  "example": "any"
+                },
+                "notableWorks": {
+                  "example": "any"
+                },
+                "active": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Directors"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
           }
         }
       }
